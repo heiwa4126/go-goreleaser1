@@ -8,6 +8,7 @@ before:
     - go mod tidy
     # you may remove this if you don't need go generate
     - go generate ./...
+
 builds:
   - env:
       - CGO_ENABLED=0
@@ -17,6 +18,12 @@ builds:
       # - darwin
     goarch:
       - amd64
+    flags:
+      - -trimpath
+    ldflags:
+      - -s -w
+    hooks:
+      post: upx --lzma '{{ .Path }}'
 
 archives:
   - replacements:

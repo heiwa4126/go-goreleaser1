@@ -77,3 +77,8 @@ goreleaser --rm-dist
 
 releaseにLinux版とWindows版が追加された。
 GitHub Actionsなくてもここまでできるのか。
+
+Goバイナリのサイズを小さくしてみる。
+
+- upx - GitHub actionsだとインストールがいるかな...
+- ldflagsの-s -w と -trimpath
