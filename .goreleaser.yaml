@@ -1,6 +1,6 @@
 # This is an example .goreleaser.yml file with some sensible defaults.
 # Make sure to check the documentation at https://goreleaser.com
-# project_name: goreleaser1
+project_name: goreleaser1
 
 before:
   hooks:
@@ -14,7 +14,10 @@ builds:
     goos:
       - linux
       - windows
-      - darwin
+      # - darwin
+    goarch:
+      - amd64
+
 archives:
   - replacements:
       darwin: Darwin
@@ -22,6 +25,13 @@ archives:
       windows: Windows
       386: i386
       amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
+    name_template: "{{ .ProjectName }}_{{ .Os }}_{{ .Arch }}_{{ .Version }}"
+    files:
+      - README.md
+
 checksum:
   name_template: 'checksums.txt'
 snapshot:

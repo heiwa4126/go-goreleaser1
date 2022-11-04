@@ -44,9 +44,9 @@ goreleaser --snapshot --rm-dist
 
 とりあえず./dist以下に tarballができた。
 
-- 386いらない
-- Macもいらない
-- tar.gzよりzipがいい
+- 386いらない -> done
+- Macもいらない -> done
+- tar.gzよりzipがいい -> Windowsはzip, Linuxはtar.gzにした。
 
 ここでいったんgitをinitial. goreleaserの作る.gitignoreは./distが入ってるだけなので、
 
@@ -54,4 +54,6 @@ goreleaser --snapshot --rm-dist
 curl -L -o .gitignore https://www.toptal.com/developers/gitignore/api/go,visualstudiocode,emacs
 ```
 
-`go build`した場合に備えて、最後に `gorelease1`を追加。
+`go build`した場合に備えて、最後に `gorelease1` を追加。
+
+...修正
