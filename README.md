@@ -31,6 +31,8 @@ mkdir gorelaser1 ; cd gorelaser1
 go mod init main
 goreleaser init
 goreleaser --snapshot --rm-dist
+# または (tar.gzは作ってくれない)
+goreleaser build
 ```
 
 `error=couldn't guess project_name, please add it to your config` とエラーが出るので、
@@ -82,3 +84,9 @@ Goバイナリのサイズを小さくしてみる。
 
 - upx - GitHub actionsだとインストールがいるかな...
 - ldflagsの-s -w と -trimpath
+
+
+GitHub Actionsつけてみる。
+おおむね
+[GitHub Actions - GoReleaser](https://goreleaser.com/ci/actions/?h=github+ac)
+のままで行けると思う。
