@@ -63,3 +63,17 @@ GitHubにpush。
 
 [Personal Access Tokens (Classic)](https://github.com/settings/tokens)
 でtoken。scopesはrepoだけでいいらしい。
+
+```bash
+git commit -am 'xxxx'
+git push
+git tag v0.0.0
+git push --tags
+
+export GITHUB_TOKEN=gggggggggggggggggggggggggggggggggggggggg
+goreleaser check
+goreleaser --rm-dist
+```
+
+releaseにLinux版とWindows版が追加された。
+GitHub Actionsなくてもここまでできるのか。
