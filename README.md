@@ -96,5 +96,39 @@ GitHub Actionsつけてみる。
 とか言われて死ぬ。このプロジェクト依存ないんでgo.sumないんですけど...
 しょうがないので空ファイルつくる。依存あるなら`go mod tidy`
 
+```bash
+# いまつけたtagを消して
+git --no-pager tag
+git tag -d v0.0.2
+git --no-pager tag
+git ls-remote --tags
+git push origin :refs/tags/v0.0.2
+git ls-remote --tags
+# 空のgo.sumつくって
+touch go.sum
+# もういちどpush
+git add --all
+git commit -am 'add empty go.sum for GitHub Actions'
+git push
+git tag v0.0.2
+git push --tags
+```
 
 おお、うまくごまかせた。upxもちゃんと動いた。
+
+debとrpmも作ってみたいのだがパラメータ多すぎて目が回る。
+[Linux packages (via nFPM) - GoReleaser](https://goreleaser.com/customization/nfpm/)
+
+goreleaser自体の [.goreleaser.yaml](https://github.com/goreleaser/goreleaser/blob/main/.goreleaser.yaml) の
+`nfpms:`
+から
+コピペしてみる。
+
+ローカルではあっさりできた。ちゃんとインストール・実行・アンインストールもできた。
+
+```bash
+git commit -am 'add .rpm and .deb'
+git push
+git tag v0.0.3
+git push --tags
+```
