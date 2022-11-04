@@ -90,3 +90,8 @@ GitHub Actionsつけてみる。
 おおむね
 [GitHub Actions - GoReleaser](https://goreleaser.com/ci/actions/?h=github+ac)
 のままで行けると思う。
+
+> Dependencies file is not found in  Supported file pattern: go.sum
+
+とか言われて死ぬ。このプロジェクト依存ないんでgo.sumないんですけど...
+しょうがないので空ファイルつくる。依存あるなら`go mod tidy`
