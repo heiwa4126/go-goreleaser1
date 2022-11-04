@@ -132,3 +132,6 @@ git push
 git tag v0.0.3
 git push --tags
 ```
+
+おお出来た。あとはWindowsでMSIが出ればいいんだけど...
+[Packaging and uploading MSI installer for Windows · Issue #1295 · goreleaser/goreleaser](https://github.com/goreleaser/goreleaser/issues/1295)
