@@ -56,4 +56,10 @@ curl -L -o .gitignore https://www.toptal.com/developers/gitignore/api/go,visuals
 
 `go build`した場合に備えて、最後に `gorelease1` を追加。
 
-...修正
+...修正。ローカルで動かしてOKを確認。
+
+次。
+GitHubにpush。
+
+[Personal Access Tokens (Classic)](https://github.com/settings/tokens)
+でtoken。scopesはrepoだけでいいらしい。
